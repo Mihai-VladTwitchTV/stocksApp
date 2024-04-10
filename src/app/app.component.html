@@ -11,6 +11,20 @@
         <h1 class="title">Mihai & Gabi Stocks Info</h1>
     </div>
     <button class="fetch-button" (click)="get()">Fetch Stocks</button>
+    <button class="fetch-button" (click)="getByDate(selectedYear + '-' + selectedMonth + '-' + selectedDay)">Fetch Stocks by Date</button>
+
+        <div class="date-selector">
+          <select class="year-select" [(ngModel)]="selectedYear" (change)="onDateChange()">
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+        <select class="month-select" [(ngModel)]="selectedMonth" (change)="onDateChange()">
+            <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+        <select class="day-select" [(ngModel)]="selectedDay" (change)="onDateChange()">
+            <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+        </select>
+        
+        </div>
     <div class="data-table">
         <ng-container *ngIf="dataFetched"> <!-- Render header row only if data is fetched -->
           <div class="header-row">

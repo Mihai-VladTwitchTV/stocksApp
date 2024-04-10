@@ -11,13 +11,40 @@ export class AppComponent {
   stocks: any[] = [];
   keys: string[] = []; // Declare keys property to store field names
   dataFetched: boolean = false; // Track whether data has been fetched
+  
+
+  years: number[] = [2022,2023,2024];
+  months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  days: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+  
+  selectedYear : number = 2022;
+  selectedMonth: string = 'Jan';
+  selectedDay: number = 1;
 
   constructor(private stocksService: StocksService) {}
 
-  saveStock(stock : Observable<any>){}
+  saveStock(stock : Observable<any>){
+    //I NEED TO IMPLEMENT THIS I KEEP FORGETTING
+  }
+
+
+  onDateChange() {
+    console.log("Date changed:", this.selectedYear, this.selectedMonth, this.selectedDay);
+}
 
   get() {
     this.stocksService.getStocksInfo().subscribe((data: any[]) => {
+      this.stocks = data;
+      this.dataFetched = true;
+      // Get field names from the first object
+      if (this.stocks.length > 0) {
+        this.keys = Object.keys(this.stocks[0]);
+      }
+    });
+  }
+
+  getByDate(date : String){
+    this.stocksService.getStocksByDate(date).subscribe((data: any[]) => {
       this.stocks = data;
       this.dataFetched = true;
       // Get field names from the first object
