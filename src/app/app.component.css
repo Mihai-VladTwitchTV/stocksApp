@@ -1,0 +1,83 @@
+/* app.component.css */
+
+/* Body styles */
+body {
+    background-color: beige;
+    font-family: 'Times New Roman', Times, serif; /* Set font to Times New Roman */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+
+/* Header styles */
+.header {
+    background-color: #3b1f00; /* Dark brown background color */ 
+    color: white; /* White text color */
+    padding: 20px; /* Add padding to the header */
+    text-align: center; /* Center align text */
+    background-image: url('textures/mahogany-613x345.jpg'); 
+}
+
+/* Title styles */
+.title {
+    font-size: 36px; /* Set font size for title */
+    margin: 0; /* Remove default margin */
+}
+
+/* Button styles */
+.button {
+    display: block; /* Make the button a block element */
+    margin: 20px auto; /* Center the button horizontally with some top margin */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 24px; /* Set font size for button */
+    background-color: #f5f5f5; /* Offwhite background color */
+    color: black; /* Black text color */
+    border: 2px solid #3b1f00; /* Dark brown border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+
+.fetch-button {
+    display: inline-block; /* Ensure Fetch button is displayed in line */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 24px; /* Set font size for button */
+    background-color: #f5f5f5; /* Offwhite background color */
+    color: black; /* Black text color */
+    border: 2px solid #3b1f00; /* Dark brown border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor on hover */
+  }
+
+/* Table styles */
+
+
+.table-row {
+    display: flex;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .header-row, .table-row {
+    display: table-row; /* Display as table row */
+  }
+  
+
+
+
+  .table-cell {
+    display: table-cell; /* Display as table cell */
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: top; /* Align content to the top */
+  }
+
+.table-cell:first-child {
+    border-left: none; /* Remove left border for the first cell in each row */
+}
+
+.table-cell:last-child {
+    border-right: none; /* Remove right border for the last cell in each row */
+}
