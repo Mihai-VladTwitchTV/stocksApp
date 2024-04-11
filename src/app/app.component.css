@@ -37,7 +37,7 @@ body {
 }
 
 
-.fetch-button {
+.fetch-button,.fetch-date-button {
     display: inline-block; /* Ensure Fetch button is displayed in line */
     padding: 10px 20px; /* Add padding to the button */
     font-size: 24px; /* Set font size for button */
@@ -46,7 +46,29 @@ body {
     border: 2px solid #3b1f00; /* Dark brown border */
     border-radius: 5px; /* Add border radius */
     cursor: pointer; /* Add pointer cursor on hover */
+    margin-right: 10px;
   }
+
+
+  .button-container {
+    text-align: right;    
+}
+
+
+
+
+
+
+  .date-selector {
+    margin-top: 1px;
+    
+}
+
+.year-select, .month-select, .day-select {
+    padding: 5px;
+    margin-right: 1px;
+    font-size: 16px;
+}
 
 /* Table styles */
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StocksService } from './stocks.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +15,16 @@ export class AppComponent {
   
 
   years: number[] = [2022,2023,2024];
-  months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  months: string[] = ['01','02','03','04','05','06','07','08','09','10','11','12'];
   days: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
   
   selectedYear : number = 2022;
   selectedMonth: string = 'Jan';
   selectedDay: number = 1;
 
-  constructor(private stocksService: StocksService) {}
+
+
+  constructor(private stocksService: StocksService,private router: Router) {}
 
   saveStock(stock : Observable<any>){
     //I NEED TO IMPLEMENT THIS I KEEP FORGETTING
@@ -52,5 +55,9 @@ export class AppComponent {
         this.keys = Object.keys(this.stocks[0]);
       }
     });
+  }
+
+  navigateToSavedStocks() {
+    this.router.navigate(['/saved-stocks']);
   }
 }
