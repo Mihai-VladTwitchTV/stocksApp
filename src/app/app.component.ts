@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StocksService } from './stocks.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +27,16 @@ export class AppComponent {
 
   constructor(private stocksService: StocksService,private router: Router) {}
 
-  saveStock(stock : Observable<any>){
-    //I NEED TO IMPLEMENT THIS I KEEP FORGETTING
+  // saveStock(stock : Observable<any>){
+  //   //I NEED TO IMPLEMENT THIS I KEEP FORGETTING
+  // }
+
+  saveStock(stock: any) {
+    // Add the logic to save the individual stock to a JSON file
+    console.log("a intrat");
+    const json = JSON.stringify(stock);
+    const blob = new Blob([json], { type: 'application/json' });
+    saveAs(blob, 'saved_stock.json');
   }
 
 
