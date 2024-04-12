@@ -10,6 +10,11 @@ const routes: Routes = [
   { path: 'saved-stocks', component: SavedStocksComponent },
   
 ];
+const routes: Routes = [
+  { path: '', component: AppComponent }, // Default route to AppComponent
+  { path: 'saved-stocks', component: SavedStocksComponent },
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

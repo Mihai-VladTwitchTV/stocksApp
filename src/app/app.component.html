@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   
+  
 <head>
+    
     
 </head>
 <body style="height: 4000px;"> 
@@ -22,7 +25,10 @@
 
     <button class="fetch-button" (click)="getByDate(selectedYear + '-' + selectedMonth + '-' + selectedDay)">Fetch Stocks by Date</button>
     <button class="fetch-button" (click)="get()">Fetch Today's Stocks</button>
+    <button class="fetch-button" (click)="get()">Fetch Today's Stocks</button>
 
+    <div class="date-selector">
+        <select class="year-select" [(ngModel)]="selectedYear" (change)="onDateChange()">
     <div class="date-selector">
         <select class="year-select" [(ngModel)]="selectedYear" (change)="onDateChange()">
             <option *ngFor="let year of years" [value]="year">{{ year }}</option>
@@ -35,7 +41,17 @@
         </select>
     </div>
 
+    </div>
+
     <div class="data-table">
+        <ng-container *ngIf="dataFetched">
+            <!-- Render header row only if data is fetched -->
+            <div class="header-row">
+                <div class="table-cell"><h2>Number of Comments</h2></div>
+                <div class="table-cell"><h2>Sentiment</h2></div>
+                <div class="table-cell"><h2>Sentiment Score</h2></div>
+                <div class="table-cell"><h2>Ticker</h2></div>
+            </div>
         <ng-container *ngIf="dataFetched">
             <!-- Render header row only if data is fetched -->
             <div class="header-row">
@@ -53,7 +69,19 @@
                 <div class="table-cell">{{ stock.ticker }}</div>
                 <button class="save-button" (click)="saveStock(stock)">Save Stock</button>
             </div>
+            <div class="table-row">
+                <div class="table-cell">{{ stock.no_of_comments }}</div>
+                <div class="table-cell">{{ stock.sentiment }}</div>
+                <div class="table-cell">{{ stock.sentiment_score }}</div>
+                <div class="table-cell">{{ stock.ticker }}</div>
+                <button class="save-button" (click)="saveStock(stock)">Save Stock</button>
+            </div>
         </ng-container>
+    </div>
+
+    <!-- Button container -->
+
+    <!-- This is where the components for different routes will be rendered -->
     </div>
 
     <!-- Button container -->
