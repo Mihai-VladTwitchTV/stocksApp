@@ -1,0 +1,8 @@
+.navigate-button {
+    font-size: 20px; /* Setează mărimea fontului */
+    padding: 10px 20px; /* Adaugă un spațiu de padding pentru a face butonul mai mare */
+    position: absolute; /* Poziționează butonul relativ la containerul părinte */
+    top: 5%; /* Plasează butonul la 10px distanță de partea de sus a containerului părinte */
+    right: 20px; /* Plasează butonul la 10px distanță de partea dreaptă a containerului părinte */
+  }
+  

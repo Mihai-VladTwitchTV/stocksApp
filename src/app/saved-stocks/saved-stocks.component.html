@@ -1,0 +1,22 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  
+<head>
+</head>
+<body style="height: 4000px;"> 
+    </body>
+</html> -->
+
+<h1>Saved Stocks</h1>
+
+
+<div *ngFor="let stock of savedStocks; let index = index">
+  <div id="stock{{ index }}">
+    <p><strong>Ticker:</strong> {{ stock.ticker }}</p>
+    <p><strong>Number of Comments:</strong> {{ stock.no_of_comments }}</p>
+    <p><strong>Sentiment:</strong> {{ stock.sentiment }}</p>
+    <p><strong>Sentiment Score:</strong> {{ stock.sentiment_score }}</p>
+  </div>
+</div>
+
+<button class="navigate-button" (click)="navigateToHome()">Back to Home</button>
